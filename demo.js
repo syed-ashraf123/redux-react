@@ -1,40 +1,33 @@
 const { createStore } = require("redux");
-
-//STORE
-
-//ACTIONS
-
-//action increment
+//Actions
 const increment = () => {
   return {
     type: "INCREMENT",
   };
 };
 
-//action decrement
 const decrement = () => {
   return {
     type: "DECREMENT",
   };
 };
 
-//REDUCER
+//Reducer
 
 const counter = (state = 0, action) => {
   switch (action.type) {
     case "INCREMENT":
-      return state + 1;
+      return state + 2;
     case "DECREMENT":
       return state - 1;
+    default:
+      return state;
   }
 };
 
-//console.log(counter(0, increment()));
-
-//Store Creation
+// console.log(counter(2, increment()));
 let store = createStore(counter);
 
-//Dispatch
 store.dispatch(increment());
 
 console.log(store.getState());

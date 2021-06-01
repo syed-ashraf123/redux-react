@@ -1,14 +1,12 @@
-const axios = require("axios").default;
-
-const loggedReducer = (state = "Not Signed In", action) => {
+const loggedReducer = (state = "Your're SIgned out", action) => {
   switch (action.type) {
     case "SIGN_IN":
-      return (state = "Signed IN");
+      return "You are Signed IN";
     case "SIGN_OUT":
-      return (state = "Signed Out");
-
+      return "You are signed out";
     default:
       return state;
   }
 };
+
 export default loggedReducer;
