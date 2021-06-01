@@ -9,7 +9,7 @@ import allReducers from "./reducers";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 
-// const middlewares = [thunk];
+const middlewares = [thunk];
 
 //Action
 // const increment = () => {
@@ -38,7 +38,10 @@ import { composeWithDevTools } from "redux-devtools-extension";
 // //Dispatch
 // store.dispatch(increment());
 
-const store = createStore(allReducers, applyMiddleware(thunk));
+const store = createStore(
+  allReducers,
+  composeWithDevTools(applyMiddleware(...middlewares))
+);
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>

@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { increment, decrement, get_posts } from "./action";
+import { increment, decrement, get_posts, signin, signout } from "./action";
 function App() {
   const counter = useSelector((state) => state.counter);
   const isLogged = useSelector((state) => state.isLogged);
@@ -13,7 +13,9 @@ function App() {
       <button onClick={() => dispatch(increment(5))}>Increment</button>
       <button onClick={() => dispatch(decrement())}>Decrement</button>
       <button onClick={() => dispatch(get_posts())}>Get API</button>
-      {isLogged ? <h3>Valuable info I shouldnt</h3> : "NOt logged"}
+      <button onClick={() => dispatch(signin())}>Sign IN</button>
+      <button onClick={() => dispatch(signout())}>Sign Out</button>
+      {isLogged}
     </div>
   );
 }

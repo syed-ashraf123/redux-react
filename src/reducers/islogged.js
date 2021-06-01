@@ -1,9 +1,12 @@
 const axios = require("axios").default;
 
-const loggedReducer = (state = false, action) => {
+const loggedReducer = (state = "Not Signed In", action) => {
   switch (action.type) {
     case "SIGN_IN":
-      return !state;
+      return (state = "Signed IN");
+    case "SIGN_OUT":
+      return (state = "Signed Out");
+
     default:
       return state;
   }

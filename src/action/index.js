@@ -13,12 +13,17 @@ export const decrement = () => {
   };
 };
 
-// export const get_posts = () => {
-//   return {
-//     type: "get_posts",
-//     payload: "jyf",
-//   };
-// };
+export const signin = () => {
+  return {
+    type: "SIGN_IN",
+  };
+};
+
+export const signout = () => {
+  return {
+    type: "SIGN_OUT",
+  };
+};
 
 export const get_posts = () => {
   return async function (dispatch) {
@@ -30,13 +35,3 @@ export const get_posts = () => {
     });
   };
 };
-
-// export async function fetchPosts() {
-//   return async (dispatch) => {
-//     const res = await axios.get("https://jsonplaceholder.typicode.com/users");
-//     return {
-//       type: "get_posts",
-//       payload: res,
-//     };
-//   };
-// }
